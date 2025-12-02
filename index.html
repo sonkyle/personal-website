@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kyle's Website</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        My own website! Here you can see my achievements in different games and
+        other things.
+      </h1>
+    </header>
+    <main>
+      <h2>Ranks:</h2>
+      <div id="rank-cards">
+        <div id="tft-rank-card">
+          <img id="tft-rank-icon" src="" alt="Rank Icon" />
+          <div id="tft-tier">Loading...</div>
+          <div id="tft-lp"></div>
+        </div>
+      </div>
+      <script>
+        async function loadTftRank() {
+          try {
+            const response = await fetch("/rank-data");
+            const data = await response.json();
+
+            if (!data.length) {
+              document.getElementById("tier").textContent = "No ranked data";
+              return;
+            }
+
+            const rank = data[1]; // data[0] is double up, data[1] is ranked
+            const tier = rank.tier.toLowerCase() + " rank icon";
+            const iconUrl = `img/${tier}.png`;
+            document.getElementById(
+              "tft-tier"
+            ).textContent = `${rank.tier} ${rank.rank}`;
+            document.getElementById(
+              "tft-lp"
+            ).textContent = `${rank.leaguePoints} LP`;
+            document.getElementById("tft-rank-icon").src = iconUrl;
+          } catch (err) {
+            console.error(err);
+            document.getElementById("tft-tier").textContent =
+              "Failed to load rank";
+          }
+        }
+        loadTftRank();
+      </script>
+    </main>
+  </body>
+</html>

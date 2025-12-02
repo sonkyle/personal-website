@@ -1,0 +1,12 @@
+#tft-rank-icon {
+  width: 100px;
+  height: 100px;
+}
+
+#rank-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
