@@ -1,12 +1,73 @@
+html{
+  font-family: 'roboto', sans-serif;
+}
+
 #tft-rank-icon {
-  width: 100px;
+  width: 130px;
   height: 100px;
 }
 
+#valorant-rank-icon{
+  width:100px;
+  height: 100px;
+}
+
+#rl-rank-icon{
+  width:100px;
+}
+
 #rank-cards {
+  font-weight: bold;
+  font-family: 'roboto', sans-serif;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 10px;
+  text-align: center;
+}
+
+.rank-card {
+  width: 150px;
+  height: 185px;
+  border: 2px solid rgb(114, 169, 252);
+  background-color: rgb(164, 199, 252);
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#tft-peak{
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  flex-direction: row;
+  font-size: 10px;
+}
+
+#tft-peak-rank-icon {
+  width: 25px;
+}
+
+#val-peak{
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  flex-direction: row;
+  font-size: 10px;
+}
+
+#val-peak-rank-icon {
+  width: 25px;
+}
+
+#rl-peak{
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  flex-direction: row;
+  font-size: 10px;
+}
+
+#rl-peak-rank-icon {
+  width: 25px;
 }

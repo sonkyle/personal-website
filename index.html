@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kyle's Website</title>
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -17,10 +18,38 @@
     <main>
       <h2>Ranks:</h2>
       <div id="rank-cards">
-        <div id="tft-rank-card">
+        <div class="rank-card">
+          <div id="game-title">Teamfight Tactics</div>
           <img id="tft-rank-icon" src="" alt="Rank Icon" />
           <div id="tft-tier">Loading...</div>
           <div id="tft-lp"></div>
+          <div id="tft-peak">
+            <div id="tft-peak-text">PEAK: </div>
+            <img id="tft-peak-rank-icon" src="img/tft_icons/master rank icon.png" alt="Rank Icon" />
+            <div id="tft-peak-text">MASTER 85 LP</div>
+          </div>
+        </div>
+        <div class="rank-card">
+          <div id="game-title">VALORANT</div>
+          <img id="valorant-rank-icon" src="img/val_icons/Platinum_3_Rank.png" alt="Rank Icon" />
+          <div id="valorant-tier">PLATINUM 3</div>
+          <div id="valorant-rr">50 RR</div>
+          <div id="val-peak">
+            <div id="val-peak-text">PEAK: </div>
+            <img id="val-peak-rank-icon" src="img/val_icons/Ascendant_2_Rank.png" alt="Rank Icon" />
+            <div id="val-peak-text">ASCENDANT II 23 RR</div>
+          </div>
+        </div>
+        <div class="rank-card">
+          <div id="game-title">Rocket League</div>
+          <img id="rl-rank-icon" src="img/rl_icons/c2_rank_icon.png" alt="Rank Icon" />
+          <div id="rl-tier">Champion II</div>
+          <div id="rl-mmr">1201 MMR</div>
+          <div id="rl-peak">
+            <div id="rl-peak-text">PEAK: </div>
+            <img id="rl-peak-rank-icon" src="img/rl_icons/gc2_rank_icon.png" alt="Rank Icon" />
+            <div id="rl-peak-text">Grand Champion II 1630 MMR</div>
+          </div>
         </div>
       </div>
       <script>
@@ -34,9 +63,9 @@
               return;
             }
 
-            const rank = data[1]; // data[0] is double up, data[1] is ranked
+            const rank = data.find(queue => queue.queueType === "RANKED_TFT");
             const tier = rank.tier.toLowerCase() + " rank icon";
-            const iconUrl = `img/${tier}.png`;
+            const iconUrl = `img/tft_icons/${tier}.png`;
             document.getElementById(
               "tft-tier"
             ).textContent = `${rank.tier} ${rank.rank}`;
