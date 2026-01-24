@@ -1,5 +1,6 @@
-html{
+html {
   font-family: 'roboto', sans-serif;
+  background-color: rgb(197, 218, 250);
 }
 
 #tft-rank-icon {
@@ -66,8 +67,35 @@ html{
   display:flex;
   flex-direction: row;
   font-size: 10px;
+  margin-left: 5px;
 }
 
 #rl-peak-rank-icon {
   width: 25px;
+}
+
+#tech-stack {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  gap:10px;
+}
+
+.tech-stack-box {
+  display:flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.tech-stack-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+}
+
+.tech-stack-icon img {
+  width: 125px;
+  height: 125px;
 }
