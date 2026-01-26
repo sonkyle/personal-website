@@ -1,17 +1,19 @@
 {
   "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "node": "^20.19.6",
-    "rocket-league-apis-client": "^0.2.7"
+    "rocket-league-apis-client": "^0.2.7",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
   },
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "type": "module"
 }
