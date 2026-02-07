@@ -10,12 +10,9 @@
     <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
     <script src="app.js" defer></script>
   </head>
-  <body>
-    <section class="relative min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden">
-    <div
-      aria-hidden="true"
-      class="absolute inset-0 -z-10 blur-3xl"
-    >
+  <body class="bg-gray-900">
+    <section id="vanta-bg" class="relative min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden bg-fixed">
+    <div aria-hidden="true" class="absolute inset-0 -z-10 blur-3xl">
       <div
         class="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rotate-30
                bg-gradient-to-tr from-pink-400 to-indigo-400 opacity-30"
@@ -23,10 +20,10 @@
       </div>
     </div>
     <div class="text-center">
-      <h1 class="text-center text-5xl sm:text-7xl font-semibold tracking-tight text-white leading-none">
-        Hello! Welcome to my website! :D
+      <h1 class="text-center text-5xl sm:text-7xl font-semibold tracking-tight text-white leading-none relative -top-5">
+        Hello! Welcome to my website!
       </h1>
-      <button id="scroll-btn" class="border p-2">About Me<span class="ml-2 relative -top-0.5">↓</span></button>
+      <button id="scroll-btn" class="border p-2 cursor-pointer">About Me<span class="ml-2 relative -top-0.5">↓</span></button>
     </div>
   </section>
     <main>
@@ -185,10 +182,27 @@
           </div>
           <div class="tech-stack-icon">
             <img src="img/tech_stack_icons/node.png" alt="node.png" />
-            <p>nodeJS</p>
+            <p>Node.js</p>
           </div>
         </div>
       </section>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
+    <script>
+    VANTA.DOTS({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xffffff,
+      color2: 0x111827,
+      backgroundColor: 0x111827
+    })
+    </script>
   </body>
 </html>

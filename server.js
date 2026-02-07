@@ -10,7 +10,7 @@ const app = express();
 const RIOT_API_KEY = process.env.RIOT_API_KEY;
 const REGION = "na1";
 const PUUID =
-  "37_4fPGD1CLi-iHj7iF5KpnKKgES_XWwKnADql04Exycf_MbFIKK583A0kpR8Pd_dB1vaYzL86NZmg";
+  "HfAbyhL7SHm5clayOBrDsCtzZyrygkKpW1BJ5uCTzDpdf50yukGUutvj2UrMjvQ6mQcsEAsJnvn3OQ";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
