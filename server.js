@@ -9,18 +9,17 @@ const app = express();
 
 const RIOT_API_KEY = process.env.RIOT_API_KEY;
 const REGION = "na1";
-const PUUID =
-  "HfAbyhL7SHm5clayOBrDsCtzZyrygkKpW1BJ5uCTzDpdf50yukGUutvj2UrMjvQ6mQcsEAsJnvn3OQ";
+const PUUID = process.env.PUUID;
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 app.get("/rank-data", async (_req, res) => {
   try {
     const resp = await fetch(
-      `https://${REGION}.api.riotgames.com/tft/league/v1/by-puuid/${PUUID}?api_key=${RIOT_API_KEY}`
+      `https://${REGION}.api.riotgames.com/tft/league/v1/by-puuid/${PUUID}?api_key=${RIOT_API_KEY}`,
     );
     if (!resp.ok) throw new Error(`Riot API error: ${resp.status}`);
     const data = await resp.json();
@@ -37,4 +36,3 @@ try {
 } catch (err) {
   console.error("Server failed to start:", err);
 }
-
