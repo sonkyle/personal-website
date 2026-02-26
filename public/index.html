@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kyle Son</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
     <link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
     <script src="app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
   </head>
   <body class="bg-gray-900">
     <section id="vanta-bg" class="relative min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden bg-fixed">
@@ -27,7 +29,82 @@
     </div>
   </section>
     <main>
-      <section id="ranks-section" class="mb-20">
+      <section id="tech-stack" class="mb-18">
+        <h2>Tech Stack:</h2>
+        <u>Proficient:</u>
+        <div class="tech-stack-box">
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/java.png" alt="java.png" />
+            <p>Java</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/mysql.png" alt="mysql.png" />
+            <p>MySQL</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/html.png" alt="html.png" />
+            <p>HTML</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/css.png" alt="css.png" />
+            <p>CSS</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/postgres.png" alt="postgres.png" />
+            <p>PostgreSQL</p>
+          </div>
+        </div>
+        <u>Moderate:</u>
+        <div class="tech-stack-box">
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/c.png" alt="c.png" />
+            <p>C</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/git.png" alt="git.png" />
+            <p>git</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img
+              src="img/tech_stack_icons/javascript.jpg"
+              alt="javascript.jpg"
+            />
+            <p>JavaScript</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/python.png" alt="python.png" />
+            <p>Python</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/cursor.png" alt="cursor.png" />
+            <p>Cursor</p>
+          </div>
+        </div>
+        <u>Little Experience:</u>
+        <div class="tech-stack-box">
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/mongodb.png" alt="mongodb.png" />
+            <p>mongoDB</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/react.png" alt="react.png" />
+            <p>React</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/r.png" alt="r.png" />
+            <p>R</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/node.png" alt="node.png" />
+            <p>Node.js</p>
+          </div>
+          <div class="tech-stack-icon">
+            <img src="img/tech_stack_icons/tailwind.png" alt="tailwind.png" />
+            <p>TailwindCSS</p>
+          </div>
+        </div>
+      </section>
+      <section id="ranks-section">
         <strong class="">Ranks:<strong>
         <div id="rank-cards">
           <div class="rank-card flex flex-col items-center">
@@ -42,7 +119,7 @@
                 src="img/tft_icons/master rank icon.png"
                 alt="Rank Icon"
               />
-              <div id="tft-peak-text">MASTER 85 LP</div>
+              <div id="tft-peak-text">MASTER 137 LP</div>
             </div>
           </div>
           <div class="rank-card flex flex-col items-center">
@@ -84,111 +161,8 @@
             </div>
           </div>
         </div>
-        <script>
-          async function loadTftRank() {
-            try {
-              const response = await fetch("/rank-data");
-              const data = await response.json();
-
-              if (!data.length) {
-                document.getElementById("tier").textContent = "No ranked data";
-                return;
-              }
-
-              const rank = data.find(
-                (queue) => queue.queueType === "RANKED_TFT",
-              );
-              const tier = rank.tier.toLowerCase() + " rank icon";
-              const iconUrl = `img/tft_icons/${tier}.png`;
-              document.getElementById("tft-tier").textContent =
-                `${rank.tier} ${rank.rank}`;
-              document.getElementById("tft-lp").textContent =
-                `${rank.leaguePoints} LP`;
-              document.getElementById("tft-rank-icon").src = iconUrl;
-            } catch (err) {
-              console.error(err);
-              document.getElementById("tft-tier").textContent =
-                "Failed to load rank";
-            }
-          }
-          loadTftRank();
-        </script>
-      </section>
-
-      <section id="tech-stack">
-        <h2>Tech Stack:</h2>
-        <u>Proficient:</u>
-        <div class="tech-stack-box">
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/java.png" alt="java.png" />
-            <p>Java</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/mysql.png" alt="mysql.png" />
-            <p>MySQL</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/html.png" alt="html.png" />
-            <p>HTML</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/css.png" alt="css.png" />
-            <p>CSS</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/vscode.png" alt="vscode.png" />
-            <p>Visual Studio Code</p>
-          </div>
-        </div>
-        <u>Moderate:</u>
-        <div class="tech-stack-box">
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/c.png" alt="c.png" />
-            <p>C</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/git.png" alt="git.png" />
-            <p>git</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img
-              src="img/tech_stack_icons/javascript.jpg"
-              alt="javascript.jpg"
-            />
-            <p>JavaScript</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/python.png" alt="python.png" />
-            <p>Python</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/cursor.png" alt="cursor.png" />
-            <p>Cursor</p>
-          </div>
-        </div>
-        <u>Learning:</u>
-        <div class="tech-stack-box">
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/mongodb.png" alt="mongodb.png" />
-            <p>mongoDB</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/react.png" alt="react.png" />
-            <p>React</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/r.png" alt="r.png" />
-            <p>R</p>
-          </div>
-          <div class="tech-stack-icon">
-            <img src="img/tech_stack_icons/node.png" alt="node.png" />
-            <p>Node.js</p>
-          </div>
-        </div>
       </section>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
     <script>
     VANTA.DOTS({
       el: "#vanta-bg",
