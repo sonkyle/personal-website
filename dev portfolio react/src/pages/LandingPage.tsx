@@ -34,7 +34,13 @@ export default function Hero() {
                 <h1 className="text-center text-5xl sm:text-7xl font-bold tracking-tight text-white leading-none relative -top-5">
                 Hello! Welcome to my website!
                 </h1>
-                <button id="scroll-btn" className="border p-2 cursor-pointer text-white">About Me<span className="ml-2 relative -top-0.5">↓</span></button>
+                <button 
+                    id="scroll-btn" 
+                    className="border p-2 cursor-pointer text-white" 
+                    onClick={() => document.getElementById('start-tech')?.scrollIntoView({behavior : 'smooth'})}
+                >
+                    About Me<span className="ml-2 relative -top-0.5">↓</span>
+                </button>
             </div>
         </section>
     );
