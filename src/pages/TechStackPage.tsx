@@ -7,7 +7,7 @@ const moderateImages = [
     'JavaScript', 'TypeScript', 'Python', 'PostgreSQL', 'MySQL'
 ]
 const newImages = [
-    'mongoDB', 'React', 'Node.js', 'TailwindCSS', 'Next.js', 'Flask'
+    'mongoDB', 'React', 'Node.js', 'TailwindCSS', 'Next.js', 'FastAPI'
 ]
 
 
