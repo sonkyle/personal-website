@@ -1,15 +1,11 @@
-import TechStackPage from './pages/TechStackPage';
 import LandingPage from './pages/LandingPage';
-import InterestsPage from './pages/InterestsPage';
-import ProjectsPage from './pages/ProjectsPage';
+import Showcase from './components/Showcase';
 
 export default function App() {
   return (
     <div>
       <LandingPage/>
-      <TechStackPage/>
-      <ProjectsPage/>
-      <InterestsPage/>
+      <Showcase/>
     </div>
   );
 }
